@@ -1,0 +1,342 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    line-height: 1.65;
+    color: #645f5f;
+	overflow-x:hidden;
+}
+
+
+p {
+	font-size: .9em;
+	margin-bottom: 1.8em;
+    margin: .65em 1.5em;
+}
+
+video {
+    width: 100%;
+}
+
+
+
+/*Video */
+
+#video-box {
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.video-control {
+    position: absolute;
+    left: 0;
+    top: 99%;
+	right:0;
+    margin-top: 10px;
+    padding: 10px 15px 0;
+    background:transparent;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+}
+
+#video-box:hover .video-control { 
+    opacity: 1;
+    -webkit-transform: translate(0,-65px);
+    -o-transform: translate(0,-65px); 
+    -moz-transform: translate(0,-65px);
+    -ms-transform: translate(0,-65px);
+        transform: translate(0,-65px);
+} 
+
+
+
+ /*Progress Bars*/
+    
+    progress[value] { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        height: 3px;
+        border: none;
+        background-color: #fdd300;
+    }
+    
+    #seek,
+    #buffered {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 97%;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    #seek {
+        z-index: 1;
+    }
+
+    #video-container:hover #seek,
+    #video-container:hover #buffered {
+        -webkit-transform: translate(0,-35px);
+        -o-transform: translate(0,-35px); 
+        -moz-transform: translate(0,-35px);
+        -ms-transform: translate(0,-35px);
+            transform: translate(0,-35px);
+    }
+    
+	/*tracking color*/
+    #seek::-webkit-progress-bar,
+    #buffered::-webkit-progress-bar {
+        background-color: #fdd300;
+    }
+    
+    #seek::-webkit-progress-value {
+        background-color: #92251d;
+    }
+    
+    #buffered::-webkit-progress-value {
+        background-color: #92251d;
+    }
+    
+    #buffered::-moz-progress-bar {
+        background-color: #92251d;
+        height: 3px;
+    }
+    
+    #seek::-moz-progress-bar {
+        background-color:#92251d;
+        height: 3px;
+    }
+
+    /*Buttons */
+    button {
+        background: transparent;
+        border: none;
+    }
+    
+    #play-pause,
+    #current-time,
+    #slash,
+    #duration,
+    #rewind {
+        float: left;
+		margin-bottom:10px;
+    }
+
+    #current-time,
+    #slash,
+    #duration {
+        color: #fdd300;
+        font-size: 1em;
+        font-weight: bold;
+        display: inline-block;
+        line-height: 2;
+    }
+
+    #current-time {
+        padding-left: 15px;
+    }
+    
+    #slash {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    
+    #duration {
+        padding-right: 10px;
+    }
+    
+    #rewind-10 {
+        line-height: 2;
+    }
+    
+    #mute,
+    #caption {
+        float: right;
+        padding-right: 15px;
+    }
+    
+    #full-screen {
+        float: right;
+    }
+    
+    #volume,
+    #volume-up,
+    #volume-down {
+        float: right;
+        font-weight: bold;
+        color: #fdd300;
+    }
+    
+    #volume-up,
+    #volume-down {
+        font-size: 1.5em;
+        line-height: 1;
+        padding-right: 10px;
+    }
+    
+    #volume {
+        line-height: 2.1;
+        font-size: 0.9em;
+    }
+    
+    #volume-up {
+        padding-left: 10px;
+    }
+    
+    p { 
+        font-family: 'Roboto', sans-serif;
+        font-size: .6em;
+        line-height: 1.2;
+    }
+    
+    /*Colors for transcript highlights*/
+    .active-text { 
+        color: #ed8004;
+        transition: all .6s ease-in-out;
+    }
+    
+    .inactive-text {
+        color: #645f5f;
+        transition: all .6s ease-in-out;
+    }
+    
+    #transcript span {
+        cursor: pointer;
+    }
+
+
+#transcript span:hover {
+        color: #5cb8d1;
+    }
+    
+
+/* ================================= 
+ Media
+==================================== */
+
+@media screen and (max-width: 425px){ 
+   
+    .wrapper  {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    #rewind-10,
+    #full-screen,
+    #volume {
+        display: none;
+    }
+    
+    #play-pause img,
+    #mute img,
+    #caption img {
+        width: 75%;
+        height: 75%;
+    }
+    
+    #current-time,
+    #time,
+    #duration,
+    #volume {
+        font-size: .8em;
+    }
+      
+    #volume-up,
+    #volume-down {
+        line-height: 0.8;
+    }
+        
+    .video-control {
+        margin-top: 5px;
+        padding: 2px 2px 0;
+    }
+    
+    #video-box:hover .video-control{
+        opacity: 1;
+        -webkit-transform: translate(0,-45px);
+        -o-transform: translate(0,-45px); 
+        -moz-transform: translate(0,-45px);
+        -ms-transform: translate(0,-45px);
+             transform: translate(0,-45px);
+            
+    }
+    
+	/*movement for buffer*/
+    #video-box:hover #seek, 
+    #video-box:hover #buffered {
+        -webkit-transform: translate(0,-25px);
+        -o-transform: translate(0,-25px); 
+        -moz-transform: translate(0,-25px);
+        -ms-transform: translate(0,-25px);
+                transform: translate(0,-25px);
+    }
+    
+    p { 
+        font-size: 1em;
+    }
+
+}
+
+@media screen and (max-width: 736px){
+   
+    .wrapper  { 
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    #transcript { 
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 800px){ 
+    p {
+        font-size: .85em;
+        margin: 0 auto;
+    }
+    
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    #transcript span {
+        transition: all .6s ease-in-out;
+    }
+    
+  
+}
+
+@media screen and (min-width: 1025px) { 
+    p {
+        font-size: 1em;
+        margin: 0 auto;
+    }
+    
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    #transcript span {
+        transition: all .6s ease-in-out;
+    }
+    
+   
+	   p {
+        font-size: 1.3em;
+    }
+}
+
