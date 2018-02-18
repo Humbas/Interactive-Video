@@ -1,0 +1,89 @@
+<!doctype html>
+<!--
+Techdegree| Project 6
+=====================================================================================
+by Humberto Ventura
+=====================================================================================
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+<title>Interactive Video</title>
+ <link rel="shortcut icon" href="icons/favicon.ico">
+<link rel="stylesheet" href="css/normalize.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/videostyle.css" />
+</head>
+<body>
+<!--wrapper-->
+        <div class="wrapper">
+        <!--video wrapper-->
+        <div id="video-wrapper">
+        <!--preloader, video files, caption-->
+        <video id="video" preload="auto">
+                    <source src="video/video.mp4" type="video/mp4" />
+                    <source src="video/video.ogg" type="video/ogg" />
+                    <track label="English" kind="subtitles" srclang="en" src="video/captions.vtt" default />
+                </video>
+          <!--preloader, video files, caption--> 
+          <!--buffering-->
+          <progress max="100" id="buffering" value="0"></progress>
+          <progress max="100" id="progressing" value="0"></progress>
+         
+            <!--buffering-->
+            
+            <!--video instruments-->
+                <div class="c-instruments">
+                <!--play, pause-->
+                 <button type="button" id="play">
+                        <img id="play-icon" src="icons/play-icon.png" alt="Play Button" />
+                    </button>
+                <!--play, pause-->
+                 <!--rewind-->
+                <button type="button" id="rewind">
+                <img src="icons/rewind-icon.png" alt="Rewind" />
+                </button>
+                 <!--rewind-->
+                 
+                <!--time-->
+                   <span id="current-time">0:00</span> <span id="space"></span><span id="duration">1:00</span>
+               <!--time--> 
+                
+                 
+                 <!--full screen-->
+                 <button type="button" id="fullscreen">
+                        <img src="icons/fullscreen-icon.png" alt="Full Screen" />
+                    </button>
+                     <!--full screen-->
+                     
+                     <!--mute-->
+                       <button type="button" id="mute">
+                        <img id="mute-icon" src="icons/volume-on-icon.png" alt="Mute Button" />
+                    </button>
+                    <!--mute-->
+                    
+                    <!--volume-->
+                     <button type="button" id="volume-up"> + </button>
+                    <span id="volume"> VOLUME </span>
+                    <button type="button" id="volume-down"> &#8211; </button>
+                 <!--volume-->
+                 
+                 <!--captions-->
+                   <button type="button" id="caption">
+                        <img id="caption-icon" src="icons/closed-caption-icon.png" alt="Captions" />
+                    </button>
+                      <!--captions-->
+                    
+                </div>
+                 <!--video instruments-->
+        </div>
+         <!--video wrapper-->
+         <!--text moving with video-->
+         <p id="textmove"></p>
+         
+        </div>
+         <script src="js/app.js"></script>
+        <!--wrapper-->
+</body>
+</html>
